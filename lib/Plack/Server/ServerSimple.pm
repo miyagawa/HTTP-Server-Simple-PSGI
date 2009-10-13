@@ -1,6 +1,9 @@
 package Plack::Server::ServerSimple;
 use strict;
 use warnings;
+use 5.008_001;
+our $VERSION = '0.01';
+
 use base qw/HTTP::Server::Simple::CGI/;
 use IO::Handle;
 use HTTP::Server::Simple;
@@ -70,6 +73,10 @@ sub psgi_app {
 
 __END__
 
+=head1 NAME
+
+Plack::Server::ServerSimple - Plack Server implementation that uses HTTP::Server::Simple
+
 =head1 SYNOPSIS
 
     use Plack::Server::ServerSimple;
@@ -79,5 +86,21 @@ __END__
         port => $port,
     );
     $server->run($app);
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno
+
+Kazuhiro Osawa
+
+Tatsuhiko Miyagawa
+
+=head1 LICENSE
+
+This module is licensed under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+L<Plack>
 
 =cut

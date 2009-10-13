@@ -1,0 +1,26 @@
+NAME
+    Plack::Server::ServerSimple - Plack Server implementation that uses
+    HTTP::Server::Simple
+
+SYNOPSIS
+        use Plack::Server::ServerSimple;
+
+        my $server = Plack::Server::ServerSimple->new(
+            host => $host,
+            port => $port,
+        );
+        $server->run($app);
+
+AUTHOR
+    Tokuhiro Matsuno
+
+    Kazuhiro Osawa
+
+    Tatsuhiko Miyagawa
+
+LICENSE
+    This module is licensed under the same terms as Perl itself.
+
+SEE ALSO
+    Plack
+

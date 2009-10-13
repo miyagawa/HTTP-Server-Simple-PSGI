@@ -1,0 +1,13 @@
+use inc::Module::Install;
+name 'Plack-Server-ServerSimple';
+all_from 'lib/Plack/Server/ServerSimple.pm';
+readme_from 'lib/Plack/Server/ServerSimple.pm';
+requires 'Plack::Util';
+requires 'HTTP::Server::Simple';
+requires 'HTTP::Status';
+build_requires 'Test::More';
+use_test_base;
+auto_include_deps;
+author_tests('xt');
+auto_set_repository;
+WriteAll;
