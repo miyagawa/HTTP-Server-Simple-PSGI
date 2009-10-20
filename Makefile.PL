@@ -3,7 +3,7 @@ name 'Plack-Server-ServerSimple';
 all_from 'lib/Plack/Server/ServerSimple.pm';
 readme_from 'lib/Plack/Server/ServerSimple.pm';
 requires 'Plack::Util';
-requires 'HTTP::Server::Simple';
+requires 'HTTP::Server::Simple', '0.41';
 requires 'HTTP::Status';
 build_requires 'Test::More';
 use_test_base;

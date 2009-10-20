@@ -2,7 +2,7 @@ package Plack::Server::ServerSimple;
 use strict;
 use warnings;
 use 5.008_001;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use base qw/HTTP::Server::Simple::CGI/;
 use IO::Handle;
