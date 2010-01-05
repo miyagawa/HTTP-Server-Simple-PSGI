@@ -50,8 +50,24 @@ sub handler {
     $env{'psgi.multithread'}  = Plack::Util::FALSE;
     $env{'psgi.multiprocess'} = Plack::Util::FALSE;
     $env{'psgi.run_once'}     = Plack::Util::FALSE;
+    $env{'psgi.streaming'}    = Plack::Util::TRUE;
 
     my $res = Plack::Util::run_app $self->{psgi_app}, \%env;
+    if (ref $res eq 'ARRAY') {
+        $self->_handle_response($res);
+    }
+    elsif (ref $res eq 'CODE') {
+        $res->(sub {
+            $self->_handle_response($_[0]);
+        });
+    }
+    else {
+        die "Bad response $res";
+    }
+}
+
+sub _handle_response {
+    my ($self, $res) = @_;
     print "HTTP/1.0 $res->[0] @{[ HTTP::Status::status_message($res->[0]) ]}\r\n";
     my $headers = $res->[1];
     while (my ($k, $v) = splice(@$headers, 0, 2)) {
@@ -61,7 +77,14 @@ sub handler {
 
     my $body = $res->[2];
     my $cb = sub { print $_[0] };
-    Plack::Util::foreach($body, $cb);
+    if (defined $body) {
+        Plack::Util::foreach($body, $cb);
+    }
+    else {
+        return Plack::Util::inline_object
+            write => $cb,
+            close => sub { };
+    }
 }
 
 sub psgi_app {
