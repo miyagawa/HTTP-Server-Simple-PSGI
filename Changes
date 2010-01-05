@@ -1,5 +1,8 @@
 Revision history for Perl extension Plack::Server::ServerSimple
 
+0.03  Tue Jan  5 05:22:04 PST 2010
+        - Added psgi.streaming support (rafl)
+
 0.02  Mon Oct 19 19:31:35 PDT 2009
         - Bump up HTTP::Server::Simple req to fix the multi header bug
 
