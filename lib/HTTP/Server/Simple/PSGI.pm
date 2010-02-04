@@ -104,7 +104,7 @@ sub handler {
         SERVER_PORT     => $ENV{SERVER_PORT},
         SERVER_PROTOCOL => $ENV{SERVER_PROTOCOL},
         REMOTE_ADDR     => $ENV{REMOTE_ADDR},
-        HTTP_COOKIE     => $ENV{COOKIE},
+        HTTP_COOKIE     => $ENV{COOKIE}, # HTTP::Server::Simple bug
         'psgi.version'    => [1,1],
         'psgi.url_scheme' => 'http',
         'psgi.input'      => $self->stdin_handle,
@@ -199,7 +199,7 @@ HTTP::Server::Simple::PSGI - PSGI handler for HTTP::Server::Simple
 HTTP::Server::Simple::PSGI is a HTTP::Server::Simple based HTTP server
 that can run PSGI applications. This module only depends on
 L<HTTP::Server::Simple>, which itself doesn't depend on any non-core
-modules except URI.pm, so it's best to be used as an embedded web server.
+modules so it's best to be used as an embedded web server.
 
 =head1 AUTHOR
 
