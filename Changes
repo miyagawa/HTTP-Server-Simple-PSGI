@@ -1,5 +1,9 @@
 Revision history for Perl extension Plack::Server::ServerSimple
 
+0.10  Thu Feb  4 10:38:06 PST 2010
+        - Renamed the distribution to HTTP::Server::Simple::PSGI
+        - Dropped Plack and LWP dependencies
+
 0.03  Tue Jan  5 05:22:04 PST 2010
         - Added psgi.streaming support (rafl)
 

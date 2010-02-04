@@ -2,7 +2,7 @@ package HTTP::Server::Simple::PSGI;
 use strict;
 use warnings;
 use 5.008_001;
-our $VERSION = '0.03';
+our $VERSION = '0.10';
 
 use base qw/HTTP::Server::Simple::CGI/;
 use HTTP::Server::Simple;
