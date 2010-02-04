@@ -4,18 +4,16 @@ NAME
 SYNOPSIS
         use HTTP::Server::Simple::PSGI;
 
-        my $server = HTTP::Server::Simple::PSGI->new(
-            host => $host,
-            port => $port,
-        );
-        $server->run($app);
+        my $server = HTTP::Server::Simple::PSGI->new($port);
+        $server->host($host);
+        $server->app($app);
+        $server->run;
 
 DESCRIPTION
     HTTP::Server::Simple::PSGI is a HTTP::Server::Simple based HTTP server
     that can run PSGI applications. This module only depends on
     HTTP::Server::Simple, which itself doesn't depend on any non-core
-    modules except URI.pm, so it's best to be used as an embedded web
-    server.
+    modules so it's best to be used as an embedded web server.
 
 AUTHOR
     Tokuhiro Matsuno

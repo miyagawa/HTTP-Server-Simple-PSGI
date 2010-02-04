@@ -1,5 +1,9 @@
 Revision history for Perl extension Plack::Server::ServerSimple
 
+0.11  Thu Feb  4 12:16:58 PST 2010
+        - Changed the API to work just like HTTP::Server::Simple::PSGI
+        - Moved the code to adapt to Plack::Handler interface to Plack core
+
 0.10  Thu Feb  4 10:38:06 PST 2010
         - Renamed the distribution to HTTP::Server::Simple::PSGI
         - Dropped Plack and LWP dependencies
