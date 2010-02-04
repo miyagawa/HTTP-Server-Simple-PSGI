@@ -2,7 +2,7 @@ package HTTP::Server::Simple::PSGI;
 use strict;
 use warnings;
 use 5.008_001;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use base qw/HTTP::Server::Simple::CGI/;
 use HTTP::Server::Simple;
@@ -63,30 +63,10 @@ my %StatusCode = (
     510 => 'Not Extended',                    # RFC 2774
 );
 
-sub new {
-    my($class, %args) = @_;
-
-    my $port = delete $args{port};
-    my $host = delete $args{host};
-    my $server_ready = delete $args{server_ready};
-
-    my $self = $class->SUPER::new($port);
-    $self->host($host) if defined $host;
-    $self->{_server_ready} = $server_ready || sub { };
-
-    $self;
-}
-
-sub print_banner {
+sub app {
     my $self = shift;
-    $self->{_server_ready}->({ host => $self->host, port => $self->port, server_software => ref $self });
-}
-
-sub run {
-    my($self, $app) = @_;
-
-    $self->{psgi_app} = $app;
-    $self->SUPER::run();
+    $self->{psgi_app} = shift if @_;
+    $self->{psgi_app};
 }
 
 sub handler {
@@ -188,11 +168,10 @@ HTTP::Server::Simple::PSGI - PSGI handler for HTTP::Server::Simple
 
     use HTTP::Server::Simple::PSGI;
 
-    my $server = HTTP::Server::Simple::PSGI->new(
-        host => $host,
-        port => $port,
-    );
-    $server->run($app);
+    my $server = HTTP::Server::Simple::PSGI->new($port);
+    $server->host($host);
+    $server->app($app);
+    $server->run;
 
 =head1 DESCRIPTION
 
