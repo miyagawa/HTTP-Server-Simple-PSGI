@@ -199,7 +199,7 @@ HTTP::Server::Simple::PSGI - PSGI handler for HTTP::Server::Simple
 HTTP::Server::Simple::PSGI is a HTTP::Server::Simple based HTTP server
 that can run PSGI applications. This module only depends on
 L<HTTP::Server::Simple>, which itself doesn't depend on any non-core
-modules, so it's best to be used as an embedded web server.
+modules except URI.pm, so it's best to be used as an embedded web server.
 
 =head1 AUTHOR
 
