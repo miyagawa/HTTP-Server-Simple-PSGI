@@ -1,15 +1,20 @@
 NAME
-    Plack::Server::ServerSimple - Plack Server implementation that uses
-    HTTP::Server::Simple
+    HTTP::Server::Simple::PSGI - PSGI handler for HTTP::Server::Simple
 
 SYNOPSIS
-        use Plack::Server::ServerSimple;
+        use HTTP::Server::Simple::PSGI;
 
-        my $server = Plack::Server::ServerSimple->new(
+        my $server = HTTP::Server::Simple::PSGI->new(
             host => $host,
             port => $port,
         );
         $server->run($app);
+
+DESCRIPTION
+    HTTP::Server::Simple::PSGI is a HTTP::Server::Simple based HTTP server
+    that can run PSGI applications. This module only depends on
+    HTTP::Server::Simple, which itself doesn't depend on any non-core
+    modules, so it's best to be used as an embedded web server.
 
 AUTHOR
     Tokuhiro Matsuno
@@ -22,5 +27,5 @@ LICENSE
     This module is licensed under the same terms as Perl itself.
 
 SEE ALSO
-    Plack
+    HTTP::Server::Simple, Plack, HTTP::Server::PSGI
 
