@@ -5,7 +5,6 @@ use 5.008_001;
 our $VERSION = '0.11';
 
 use base qw/HTTP::Server::Simple::CGI/;
-use HTTP::Server::Simple;
 
 # copied from HTTP::Status
 my %StatusCode = (
