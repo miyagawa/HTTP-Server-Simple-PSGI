@@ -93,6 +93,7 @@ sub handler {
         'psgi.run_once'     => 0,
         'psgi.streaming'    => 1,
         'psgi.nonblocking'  => 0,
+        'psgix.io'          => $self->stdio_handle,
     };
 
     while (my ($k, $v) = each %ENV) {
