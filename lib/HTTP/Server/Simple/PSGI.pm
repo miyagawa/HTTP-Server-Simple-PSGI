@@ -2,7 +2,7 @@ package HTTP::Server::Simple::PSGI;
 use strict;
 use 5.005_03;
 use vars qw($VERSION);
-$VERSION = '0.12';
+$VERSION = '0.13';
 
 use base qw/HTTP::Server::Simple::CGI/;
 
