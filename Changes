@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::Server::Simple::PSGI
 
+0.14  Thu Feb 18 10:26:16 PST 2010
+        - Upped HTTP::Server::Simple dependency
+
 0.13  Thu Feb 18 03:32:49 PST 2010
         - Support perl 5.005 and 5.6!
 
