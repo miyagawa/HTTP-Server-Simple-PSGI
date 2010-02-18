@@ -1,8 +1,8 @@
 package HTTP::Server::Simple::PSGI;
 use strict;
-use warnings;
-use 5.008_001;
-our $VERSION = '0.12';
+use 5.005_03;
+use vars qw($VERSION);
+$VERSION = '0.12';
 
 use base qw/HTTP::Server::Simple::CGI/;
 
