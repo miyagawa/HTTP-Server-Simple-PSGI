@@ -2,6 +2,10 @@ Revision history for Perl extension HTTP::Server::Simple::PSGI
 
 {{$NEXT}}
 
+0.15  2013-08-22 12:24:33 PDT
+        - Bundle Plack::Handler::HTTP::Server::Simple
+        - Convert to Milla
+
 0.14  Thu Feb 18 10:26:16 PST 2010
         - Upped HTTP::Server::Simple dependency
 

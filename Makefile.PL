@@ -11,9 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "PSGI handler for HTTP::Server::Simple",
   "AUTHOR" => "Tokuhiro Matsuno",
-  "BUILD_REQUIRES" => {
-    "ExtUtils::MakeMaker" => 0
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -25,7 +23,7 @@ my %WriteMakefileArgs = (
     "HTTP::Server::Simple" => "0.42"
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.14",
+  "VERSION" => "0.15",
   "test" => {
     "TESTS" => "t/*.t"
   }

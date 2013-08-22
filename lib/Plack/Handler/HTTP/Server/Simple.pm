@@ -2,7 +2,7 @@ package Plack::Handler::HTTP::Server::Simple;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 sub new {
     my($class, %args) = @_;
