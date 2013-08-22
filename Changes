@@ -1,5 +1,7 @@
 Revision history for Perl extension HTTP::Server::Simple::PSGI
 
+{{$NEXT}}
+
 0.14  Thu Feb 18 10:26:16 PST 2010
         - Upped HTTP::Server::Simple dependency
 
